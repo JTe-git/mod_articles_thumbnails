@@ -20,7 +20,7 @@ if (!count($items))
 	return;
 }
 
-$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
+$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx') ?? '', ENT_COMPAT, 'UTF-8');
 $layout = $params->get('layout', 'default');
 switch((int)$params->get('templateframework', 1))
 {
