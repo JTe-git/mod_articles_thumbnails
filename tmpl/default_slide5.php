@@ -123,8 +123,8 @@ HTMLHelper::_('bootstrap.carousel', '.selector');
                             <?php if($params->get('show_content') != 'offc'): ?>
                                 <?php
                                 if($params->get('show_content') == 'partc'):
-                                    $cleanText = filter_var($items[$show]->introtext, FILTER_SANITIZE_STRING);
-                                    $introCleanText = strip_tags($cleanText);
+                                    $CleanText = strip_tags($item->introtext);
+                                    $introCleanText = htmlspecialchars($CleanText ?? '', ENT_COMPAT, 'UTF-8');
                                     if (strlen($introCleanText) > $params->get('tam_content', 200))
                                     {
                                         $introtext = substr($introCleanText,0,strrpos(substr($introCleanText,0,$params->get('tam_content', 200))," ")).'...';
